@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAccounts, getRate } from "../store/actions/accountsActions";
+import "./style.scss";
 
 const Accounts = () => {
   const dispatch = useDispatch();
