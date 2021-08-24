@@ -1,5 +1,5 @@
 import React from "react";
-import Accounts from "./app/pages/Accounts";
+import Accounts from "./app/pages/accounts";
 
 function App() {
   return (

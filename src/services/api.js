@@ -2,12 +2,12 @@ import axios from "axios";
 
 // Create instance of axios for Apis
 export const publicApi = axios.create({
-  baseURL: "https://api.ibanfirst.com/PublicAPI",
+  baseURL: process.env.REACT_APP_PUBLIC_API,
   headers: { "Content-Type": "application/json" },
 });
 
 export const platformApi = axios.create({
-  baseURL: "https://platform.ibanfirst.com/js",
+  baseURL: process.env.REACT_APP_PLATFORM_API,
   headers: { "Content-Type": "application/json" },
 });
 
