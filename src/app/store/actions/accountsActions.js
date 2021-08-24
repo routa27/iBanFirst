@@ -1,4 +1,4 @@
-import { platformApi } from "../../../services/api";
+import { platformApi, publicApi } from "../../../services/api";
 import accountsConstants from "../constants/accountsConstants";
 
 export async function getAccounts(dispatch) {
@@ -14,6 +14,24 @@ export async function getAccounts(dispatch) {
   } catch (error) {
     dispatch({
       type: accountsConstants.REQUEST_ACCOUNTS_ERROR,
+      payload: error,
+    });
+  }
+}
+
+export async function getRate(dispatch, currency) {
+  try {
+    dispatch({ type: accountsConstants.REQUEST_RATE_REQUEST });
+
+    let response = await publicApi.get(`/Rate/EUR${currency}`);
+
+    dispatch({
+      type: accountsConstants.REQUEST_RATE_GET,
+      payload: response.data?.rate,
+    });
+  } catch (error) {
+    dispatch({
+      type: accountsConstants.REQUEST_RATE_ERROR,
       payload: error,
     });
   }
