@@ -14,7 +14,7 @@ Minimalist UI.
 
 ## Environment variables
 
-All environment variables are present in `.env` file.
+All environment variables are present in `.env.dist` file.
 
 ```
 REACT_APP_PUBLIC_API="https://api.ibanfirst.com/PublicAPI"
